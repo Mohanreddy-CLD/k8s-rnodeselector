@@ -10,5 +10,4 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: Always
-  nodeSelector:
-    disktype: ssd
+    

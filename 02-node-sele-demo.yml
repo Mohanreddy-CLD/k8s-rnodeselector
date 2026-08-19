@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector-pod-1
+  labels:
+    purpose: demonstrate-node-selector 
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: Always
+  nodeSelector:
+    disktype: ssd
+  tolerations:
+  - key: "key1"
+    operator: "exists"
+    value: "value1"
+    effect: "NoExecute"
+  - key: "key1"
+    operator: "exists"
+    value: "value1"
+    effect: "NoSchedule"
